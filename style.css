@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:300|VT323');
+@keyframes flash {
+  0% {
+    filter: saturate(1) brightness(1);
+  }
+  100%{
+    filter: saturate(1.5) brightness(1.25);
+  }
+}
+
+:root {
+  --main-bg-color: #EEE;
+  --main-font-color: #777;
+  --reel-bg-color: #7AA;
+  --reel-border-color: #366;
+  --true-bg-color: #8E8;
+  --true-border-color: #4A4;
+  --false-bg-color: #E88;
+  --false-border-color: #A44;
+}
+
+body {
+  background-color: var(--main-bg-color);
+}
+
+#scoreboard, #message, #screen, #numpad, #concede {
+  width: 15vw;
+  min-width: 300px;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+#scoreboard, #message {
+  font: 3rem 'Rubik', sans-serif;
+  color: var(--main-font-color);
+}
+
+#score {
+  font-size: 6rem;
+}
+
+#screen {
+  display: grid;
+  height: 5vw;
+  min-height: 100px;
+  grid: 1fr / repeat(3, 1fr);
+  grid-gap: 0 10px;
+}
+
+.reel {
+  background-color: var(--reel-bg-color);
+  border: 3px solid var(--reel-border-color);
+  border-radius: 5px;
+  text-align: center;
+  font: calc(4rem + 1.6vw) 'VT323', monospace;
+  color: #FFF;
+}
+
+.true {
+  background-color: var(--true-bg-color);
+  border: 3px solid var(--true-border-color);
+  animation: flash 0.3s 0s 2;
+}
+
+.false {
+  background-color: var(--false-bg-color);
+  border: 3px solid var(--false-border-color);
+  animation: flash 0.3s 0s 2;
+}
+
+#numpad {
+  display: grid;
+  height: 20vw;
+  min-height: 400px;
+  grid: repeat(4, 1fr) / repeat(3, 1fr);
+  grid-gap: 10px 10px;
+}
+
+.button {
+  background-color: #FFF;
+  border-width: 3px;
+  border-radius: 20px;
+  font: 3.7rem 'Rubik', sans-serif;
+  color: var(--main-font-color);
+}
+
+.button:active {
+  filter: brightness(0.95);
+}
+
+.button:focus {
+  outline: 0;
+}
+
+.button:disabled {
+  border: 1px solid var(--main-bg-color);
+  color: var(--main-bg-color);
+}
+
+#submitBtn {
+  background-color: var(--true-bg-color);
+}
+
+#clearBtn {
+  background-color: var(--false-bg-color);
+}
+
+#concedeBtn {
+  width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  #scoreboard, #message, #screen, #numpad, #concede {
+    width: 54vw;
+  }
+
+  #screen {
+    height: 18vw;
+  }
+
+  .reel {
+    font-size: calc(1rem + 15vw);
+  }
+
+  #numpad {
+    height: 72vw;
+  }
+}

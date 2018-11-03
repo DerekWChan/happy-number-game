@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Happy Number Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div id="scoreboard">
+      Score
+      <div id="score">100%</div>
+    </div>
+    <div id="message">&nbsp</div>
+    <div id="screen">
+      <div class="reel"></div>
+      <div class="reel"></div>
+      <div class="reel"></div>
+    </div>
+    <div id="numpad">
+      <button class="button" onclick="inputDigit(this)">1</button>
+      <button class="button" onclick="inputDigit(this)">2</button>
+      <button class="button" onclick="inputDigit(this)">3</button>
+      <button class="button" onclick="inputDigit(this)">4</button>
+      <button class="button" onclick="inputDigit(this)">5</button>
+      <button class="button" onclick="inputDigit(this)">6</button>
+      <button class="button" onclick="inputDigit(this)">7</button>
+      <button class="button" onclick="inputDigit(this)">8</button>
+      <button class="button" onclick="inputDigit(this)">9</button>
+      <button id="submitBtn" class="button" onclick="inputSubmit()">&#x2713</button>
+      <button id="digit0" class="button" onclick="inputDigit(this)" disabled>0</button>
+      <button id="clearBtn" class="button" onclick="inputClear()">&#x2715</button>
+    </div>
+    <div id="concede">
+      <button id="concedeBtn" class="button" onclick="inputConcede()">Concede</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
